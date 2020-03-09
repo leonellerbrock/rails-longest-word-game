@@ -1,0 +1,19 @@
+<div class="container">
+  <h1>New Game</h1>
+
+  <div class="grid">
+    <% @letters.each do |letter| %>
+    <div class="col"><%= letter %></div>
+    <% end %>
+  </div>
+  <%=link_to "What is the longest word you can find?", score_path %>
+
+  <div class="form-group">
+
+    <form action="/score">
+      <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+      <input type="text" name="word" placeholder="type" class="form-control">
+      <input type="submit" class="btn btn-primary" value ="play">
+    </form>
+  </div>
+</div>
